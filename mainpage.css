@@ -1,1 +1,73 @@
+body {
+  background: rgb(36, 21, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(36, 21, 0, 1) 0%,
+    rgba(121, 9, 18, 1) 35%,
+    rgba(255, 156, 0, 1) 100%
+  );
+}
+.title h1 {
+  color: white;
+  letter-spacing: 5px;
+  margin-left: 450px;
+  font-size: 70px;
+  margin-top: 30px;
+  float: left;
+  position: relative;
+  margin-bottom: 90px;
+}
+.title img {
+  position: absolute;
+  margin-left: 595px;
+  margin-top: 28px;
+}
+.input {
+  position: relative;
+}
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #b0ada0eb;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+.searchTerm:focus {
+  color: #b0ada0eb;
+}
+
+.searchButton {
+  width: 70px;
+  height: 50px;
+  border: 1px solid #b0ada0eb;
+  background: #b0ada0eb;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 60%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
