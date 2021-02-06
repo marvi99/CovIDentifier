@@ -6,6 +6,7 @@ function initMap() {
     center: { lat: 37.77, lng: -122.447 },
   });
   directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById('directionsPanel'));
   calculateAndDisplayRoute(directionsService, directionsRenderer);
   document.getElementById("mode").addEventListener("change", () => {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
