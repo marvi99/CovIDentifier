@@ -1,37 +1,26 @@
-#map {
-  border: 2px solid #333;
-  width: 80vw;
-  height: 80vh;
-  float:right;
+html,
+body {
+  background: rgb(36, 21, 0);
+  
 }
 
-#directions{
-  position: fixed;
-  text-align: left;
-  overflow:auto;
-  margin: auto;
-  width: 50%;
- 
+.title h1{
+  position: relative;
+  color: white;
+  letter-spacing: 5px;
+  text-align: center;
+  /* margin-left: 35%; */
+  font-size: 70px;
+  margin-top: 30px;
 }
 
-#mapModeDirections{
-  margin: auto;
-  padding: 1rem;
+.modeOfTravel {
+  margin-left: 100px;
+  color: #fff;
 }
 
 #directionsPanel{
-  float:right;
-  width:30%;
-  height:100%
-}
-
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  background-color: #fff;
 }
 
 #floating-panel {
