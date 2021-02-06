@@ -5,6 +5,24 @@ function initMap() {
     zoom: 14,
     center: { lat: 37.77, lng: -122.447 },
   });
+  var markerLatlng = new google.maps.LatLng(43.644402,-79.386414);
+  var marker = new google.maps.Marker({
+    position: markerLatlng,
+    title:"High Risk Area"
+  });
+  marker.setMap(map)
+
+  const cityCircle = new google.maps.Circle({
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+    map,
+    center: { lat: 43.644402, lng: -79.386414 },
+    radius: 50,
+  });
+
   directionsRenderer.setMap(map);
   directionsRenderer.setPanel(document.getElementById('directionsPanel'));
   calculateAndDisplayRoute(directionsService, directionsRenderer);
