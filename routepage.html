@@ -2,11 +2,24 @@
 <head>
     <link rel="stylesheet" href="routepage.css">
 </head>
+<h1 id="directions">Directions</h1>
+<div id="mapModeDirections">
+    <div id="map"></div> 
+    <div>
+        <strong>Mode of Travel: </strong>
+        <select id="mode" onchange="calcRoute();">
+        <!-- <option value="DRIVING">Driving</option> -->
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+        </select>
+    </div>
+    <div id="directionsPanel"></div>
+</div>
 
-<h1>Hello World</h1>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5GC3ltAHoN99BD0nUPOSJ9T3HTav9e6U&callback=initMap&libraries=&v=weekly"
+      async
+></script>
+<script src="routepage.js"></script>
 
-<div id="map"></div>
-
-<script async
-    src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap">
-</script>
