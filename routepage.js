@@ -1,59 +1,34 @@
-//let map;
-
 function initMap() {
-  var directionsService = new google.maps.DirectionsService();
-  var directionsRenderer = new google.maps.DirectionsRenderer();
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  const directionsService = new google.maps.DirectionsService();
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: { lat: 37.77, lng: -122.447 },
+  });
+  directionsRenderer.setMap(map);
+  calculateAndDisplayRoute(directionsService, directionsRenderer);
+  document.getElementById("mode").addEventListener("change", () => {
+    calculateAndDisplayRoute(directionsService, directionsRenderer);
   });
 }
-function calcRoute() {
-  var start = document.getElementById('start').value;
-  var end = document.getElementById('end').value;
-  var request = {
-    origin:start,
-    destination:end,
-    travelMode: 'DRIVING'
-  };
-  directionsService.route(request, function(response, status) {
-    if (status == 'OK') {
-      directionsRenderer.setDirections(response);
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  const selectedMode = document.getElementById("mode").value;
+  directionsService.route(
+    {
+      origin: { lat: 43.6426, lng: -79.3871 },
+      destination: { lat: 43.643860, lng: -79.389290 },
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode],
+    },
+    (response, status) => {
+      if (status == "OK") {
+        directionsRenderer.setDirections(response);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
     }
-  });
+  );
 }
-// const calculateAndRenderDirections = (origin, destination) => {
-//   let directionsService = new google.maps.DirectionsService(),
-//       directionsDisplay = new google.maps.DirectionsRenderer(),
-//       request = { origin: origin,
-//                   destination: destination,
-//                   travelMode: 'BICYCLING'
-//                 }
-//       directionsDisplay.setMap(map);
-//       directionsService.route(request, (result, status) => {
-//       if (status == 'OK'){
-//         directionsDisplay.setDirections(result)
-//       }
-//     })
-// }
-
-// let map;
-//         document.addEventListener("DOMContentLoaded", () => {
-//             let s = document.createElement("script");
-//             document.head.appendChild(s);
-//             s.addEventListener("load", () => {
-//                 //script has loaded
-//                 console.log("script has loaded");
-//                 map = new google.maps.Map(document.getElementById("map"), {
-//                     center: {
-//                         lat: 45.3496711,
-//                         lng: -75.7569551
-//                     },
-//                     zoom: 16,
-//                     mapTypeId: google.maps.MapTypeId.ROADMAP
-//                 });
-//             });
-//             //s.src = "https://maps.googleapis.com/maps/api/directions/json?origin=24+Sussex+Drive+Ottawa+ON&destination=CWC8%2BR9%20Mountain%20View%20CA%20USA&key=AIzaSyC-E7_Hys0JoyK3lcrYXqzOo9eJIo1I_9Q&callback=initMap&libraries=places&v=weekly"
-//             //s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyC-E7_Hys0JoyK3lcrYXqzOo9eJIo1I_9Q&callback=initMap&libraries=places&v=weekly"
-//           });
-

@@ -3,14 +3,22 @@
     <link rel="stylesheet" href="routepage.css">
 </head>
 
-
 <div id="map"></div> 
+<div>
+    <strong>Mode of Travel: </strong>
+    <select id="mode" onchange="calcRoute();">
+      <option value="DRIVING">Driving</option>
+      <option value="WALKING">Walking</option>
+      <option value="BICYCLING">Bicycling</option>
+      <option value="TRANSIT">Transit</option>
+    </select>
+    </div>
 <div id="directionsPanel" style="float:right;width:30%;height:100%"></div>
 
-
-<!-- <script async src="https://maps.googleapis.com/maps/api/directions/json?origin=24+Sussex+Drive+Ottawa+ON&destination=CWC8%2BR9%20Mountain%20View%20CA%20USA&key=AIzaSyB04ubFd1-VRWnlcIaKR6FO3wbS1IMdWhY"></script> -->
-<!-- <script src="routepage.js"></script> -->
-
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5GC3ltAHoN99BD0nUPOSJ9T3HTav9e6U&callback=initMap&libraries=&v=weekly"
+      async
+></script>
 <script src="routepage.js"></script>
 <style>
     body {
@@ -26,58 +34,3 @@
         height: 80vh;
     }
 </style>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mapping</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        #map {
-            border: 2px solid #333;
-            width: 80vw;
-            height: 80vh;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="map"></div>
-
-    <script async = false>
-        let map;
-        document.addEventListener("DOMContentLoaded", () => {
-            let s = document.createElement("script");
-            document.head.appendChild(s);
-            s.addEventListener("load", () => {
-                //script has loaded
-                console.log("script has loaded");
-                map = new google.maps.Map(document.getElementById("map"), {
-                    center: {
-                        lat: 45.3496711,
-                        lng: -75.7569551
-                    },
-                    zoom: 16,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
-            });
-            s.src = "https://maps.googleapis.com/maps/api/directions/json?origin=24+Sussex+Drive+Ottawa+ON&destination=CWC8%2BR9%20Mountain%20View%20CA%20USA&key=AIzaSyC-E7_Hys0JoyK3lcrYXqzOo9eJIo1I_9Q&callback=initMap&libraries=places&v=weekly"
-
-            //s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyC-E7_Hys0JoyK3lcrYXqzOo9eJIo1I_9Q&callback=initMap&libraries=places&v=weekly"
-            // s.src = `https://maps.googleapis.com/maps/api/js?key=https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZA7h51KxWWXq60-UqfIwoNeivWa8VKI`;
-            //s.src = `https://maps.googleapis.com/maps/api/js?key=${MAPKEY}`;
-        });
-    </script>
-</body>
-
-</html> -->
