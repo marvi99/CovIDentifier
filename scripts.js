@@ -1,9 +1,9 @@
 const app = document.getElementById('root');
 
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
+const container1 = document.createElement('div');
+container1.setAttribute('class', 'container1');
 
-app.appendChild(container);
+app.appendChild(container1);
 
 // Create a request variable and assign a new XMLHttpRequest object to it.
 // var request = new XMLHttpRequest()
@@ -35,7 +35,7 @@ $.ajax({
 		card.setAttribute('class', 'card');
 		var h1 = document.createElement('h1');
 		h1.textContent = 'PEAK HOURS';
-		container.appendChild(card);
+		container1.appendChild(card);
 		card.appendChild(h1);
 		for(var i = 0; i < response.analysis[6].busy_hours.length; i++) {
 			var p = document.createElement('p')
@@ -52,7 +52,7 @@ $.ajax({
 	quietCard.setAttribute('class', 'card');
 	var h1 = document.createElement('h1');
 	h1.textContent = 'QUIET HOURS';
-	container.appendChild(quietCard);
+	container1.appendChild(quietCard);
 	quietCard.appendChild(h1);
 	for(var i = 0; i < response.analysis[6].quiet_hours.length; i++) {
 		var p = document.createElement('p')
@@ -72,7 +72,7 @@ $.ajax({
 		h1 = document.createElement('h1');
 		h1.textContent = 'HOURLY ACTIVITY';
 
-		container.appendChild(card2);
+		container1.appendChild(card2);
 		card2.appendChild(h1);
 
 		for(var i = 0; i < response.analysis[6].hour_analysis.length; i++) {
@@ -95,7 +95,7 @@ $.ajax({
 		card3.setAttribute('class', 'card');
 		h1 = document.createElement('h1');
 		h1.textContent = 'STORE INFORMATION';
-		container.appendChild(card3);
+		container1.appendChild(card3);
 		card3.appendChild(h1);
 		var name = document.createElement('p')
 		name.textContent = `${response.venue_info.venue_name}`
