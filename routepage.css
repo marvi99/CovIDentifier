@@ -1,6 +1,6 @@
 html,
 body {
-  background: rgb(36, 21, 0);
+  background: rgb(200, 230, 255);
 
 }
 
@@ -15,8 +15,10 @@ body {
 }
 
 .modeOfTravel {
-  margin-left: 100px;
-  color: #fff;
+  color: #3d3d3deb;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 #directionsPanel{

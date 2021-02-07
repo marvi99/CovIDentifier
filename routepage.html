@@ -9,8 +9,17 @@
     <script src="https://js.radar.io/v3/radar.min.js"></script>
 </head>
 <body>
-    <div class="title">
+    <div class="title container">
         <h1>Directions</h1>
+    </div>
+    <div class="modeOfTravel container">
+        <p>Mode of Travel: </p>
+        <select id="mode" class= "form-select form-select-lg mb-3" onchange="calcRoute();">
+        <!-- <option value="DRIVING">Driving</option> -->
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+        </select>
     </div>
     <div class="container">
         <div id="mapModeDirections" class="row">
@@ -18,15 +27,7 @@
             <div id="directionsPanel" class="col-4"></div>
         </div>
     </div>
-    <div class="modeOfTravel">
-        <strong>Mode of Travel: </strong>
-        <select id="mode" onchange="calcRoute();">
-        <!-- <option value="DRIVING">Driving</option> -->
-        <option value="WALKING">Walking</option>
-        <option value="BICYCLING">Bicycling</option>
-        <option value="TRANSIT">Transit</option>
-        </select>
-    </div>
+    
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <div id="root"></div>

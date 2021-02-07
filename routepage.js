@@ -78,7 +78,7 @@ function initMap() {
     fillOpacity: 0.35,
     map,
     center: { lat: 45.420536, lng: -75.677267 },
-    radius: 300,
+    radius: 200,
   });
 
   const NigerianHCCircle = new google.maps.Circle({
@@ -136,7 +136,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   directionsService.route(
     {
       origin: { lat: 45.423208, lng: -75.683164 },
-      destination: { lat: 45.403220, lng: -75.688260 },
+      destination: { lat: 45.411169, lng: -75.692518 },
       provideRouteAlternatives: true,
       // Note that Javascript allows us to access the constant
       // using square brackets and a string value as its
