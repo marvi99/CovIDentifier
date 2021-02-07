@@ -1,7 +1,7 @@
 var originLatitude;
 var originLongitude;
 
-Radar.initialize("prj_live_pk_5788f570020b433e564190f2992e01a5921aa394");
+Radar.initialize(KEY);
   
         Radar.ipGeocode(function(err, result) {
           if (err) {
